@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+           
+        }
+       
+        .navbar {
+          
+            display: flex;
+            justify-content: space-around;
+            height: 10vh;
+            background-color: rgb(223, 145, 145);
+            align-items: center;
+            
+
+        }
+
+        .right-nav {
+            list-style: none;
+            float: right;
+        }
+
+        .right-nav ul {
+            display: flex;
+            align-items: center;
+        }
+
+        .right-nav li {
+            text-decoration: none;
+            list-style: none;
+            font-size: 18px;
+
+
+        }
+
+        .right-nav a {
+            text-decoration: none;
+            color: black;
+            margin: 25px;
+        }
+
+        .right-nav a:hover {
+            color: white;
+            transition: 0.3s;
+        }
+
+        .logo img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+
+        .logo {
+            display: flex;
+            justify-content: center;
+        }
+
+        .navbar .logo-name {
+            margin-top: 12px;
+            font-size: 25px;
+        }
+
+        .contact {
+            margin: auto;
+            padding: 12px;
+            background-color: #000000;
+            border: 1.5px solid rgb(26, 19, 19);
+            border-radius: 5px;
+            justify-content: center;
+            color: #dfdfdf;
+            font-size: 18px;
+        }
+
+        li .contact:hover {
+            transition: 0.4s;
+            background-color: #dfdfdf;
+            color: #000000;
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href=""><img src="img\SEO LOGO DESIGN.png" alt=""></a>
+                <div class="logo-name">
+                    seowebgrow.com
+                </div>
+            
+            </div>
+
+
+
+            <div class="right-nav">
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Tools</a></li>
+                    <li><a href="">Service</a></li>
+                    <li><a href="">Blogs</a></li>
+                    <li><a href="">About Us</a></li>
+                    <li> <input class="contact" type="button" value="Contact Us"></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+</body>
+
+</html>
