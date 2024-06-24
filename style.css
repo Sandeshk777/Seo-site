@@ -1,0 +1,208 @@
+* {
+    padding: 0;
+    margin: 0;
+
+  }
+
+  html,
+  body {
+    height: 100%;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .main {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    /*it is mostly used for parent div it helps to bind their children elements together use relative position */
+  }
+
+  .nav {
+    height: 65px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    /* background-color: rgb(54, 0, 105); */
+    align-items: center;
+    border-bottom: 2px solid #dadada;
+    /* padding: 0 1vw; Optional padding */
+    background-image: linear-gradient(120deg, #F9E2DF, #aad6f3);
+    backdrop-filter: blur(10px);
+  }
+
+  .nav h2 {
+  
+    font-size: 2vw;
+    font-weight: 700;
+    display: flex;
+          justify-content: center;
+  }
+  .nav-part1{
+    display: flex;
+    align-items: center;
+    padding: 0 3vw;
+  }
+
+  .nav-part2 {
+    display: flex;
+    /* flex-wrap: wrap; Wrap content to multiple lines */
+    gap: 4vw;
+    /* Maintain spacing between links */
+    padding: 0 3vw;
+    align-items: center;
+  }
+
+  .nav-part2 h4 {
+    font-size: 1vw;
+  }
+
+  .nav i {
+    font-size: 1.2vw;
+    display: none;
+  }
+
+  .nav-part2 h4 input {
+  width: auto;
+  padding: 0.625rem;
+  justify-content: center;
+  background-color: #292930;
+  color: #F6F6F6;
+  border: 0.125rem solid #000000;
+  border-radius: 0.3125rem;
+  font-family: 'Poppins', sans-serif;
+
+}
+  .nav-part2 h4 input:hover {
+
+  background-color: #dfdfdf;
+  color: rgb(0, 0, 0);
+  transition: all .5s;
+}
+
+  .container {
+    display: flex;
+    height: calc(100% - 65px);
+    /*  calculate the hight of .container div by subtracting the hight of nav from main div height 65+2px border=67 100%-67*/
+    width: 100%;
+    position: relative;
+    background-image: linear-gradient(120deg, #F9E2DF, #aad6f3);
+  }
+
+  .left-container {
+
+    height: 100%;
+    width: 50%;
+    /* background-color: red; */
+    /* padding: 10vw 4vw; */
+  }
+  .left-container h1{
+    padding: 7vw 4vw;
+    line-height: 4.4vw;
+    font-size: 4vw;
+  }
+  .left-container h1>span{
+    color:#505CF6;
+   font-size: 3vw;
+   
+  }
+  .left-container h1 input {
+  width: auto;
+  padding: 0.600vw 0.600vw;
+  justify-content: center;
+  background-color: #292930;
+  color: #F6F6F6;
+  border: 0.200vw solid #000000;
+  border-radius: 0.3125rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2vw;
+  font-weight: 200;
+
+}
+  .left-container h1 input:hover {
+
+  background-color: #dfdfdf;
+  color: rgb(0, 0, 0);
+  transition: all .5s;
+}
+.nav img {
+  /* margin-right: 3.75rem; */
+  width: 50px;
+          height: 50px;
+          border-radius: 50%;
+
+}
+  .right-container {
+
+    height: 100%;
+    width: 50%;
+    /* background-color: rgb(87, 84, 237); */
+    
+  }
+  .right-container img{
+    height: 100%;
+    width: 100%;
+  }
+  
+  @media(max-width:700px) {
+    .nav {
+      
+      height: 65px;
+      width: 100%;
+    }
+
+    .nav h2 {
+      font-size: 6vw;
+      padding: 0 5vw;
+    }
+
+    .nav h4 {
+      display: none;
+
+    }
+
+    .nav i {
+      display: block;
+      font-size: 6vw;
+      font-weight: 800;
+    }
+
+    .container {
+      flex-direction: column;
+      height: calc(100% - 65px);
+    }
+
+    .left-container {
+      width: 100%;
+      height: 50%;
+      /* padding: 4vw 6vw; */
+    }
+    .left-container h1{
+      padding-top: 6vh;
+      font-size: 10vw;
+      line-height: 11vw;
+    }
+    .left-container h1 span{
+      font-size: 7vw;
+      line-height: 11vw;
+    }
+    .left-container h1 input{
+      padding: 3vw 6vw;
+      border-radius: 3px;
+      font-size: 3.6vw;
+      font-weight: 600;
+    }
+
+    .right-container {
+      width: 100%;
+      height: 50%;
+      
+    }
+    .right-container img{
+      
+      width: 85%;
+      height: 85%;
+      
+    }
+    
+  }
