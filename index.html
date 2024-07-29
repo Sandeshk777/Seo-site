@@ -9,16 +9,535 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+
+    }
+
+    html,
+    body {
+      height: 100%;
+      width: 100%;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .main {
+      height: 100%;
+      width: 100%;
+      position: relative;
+      /*it is mostly used for parent div it helps to bind their children elements together use relative position */
+    }
+
+    .nav {
+      height: 65px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      /* background-color: rgb(54, 0, 105); */
+      align-items: center;
+      border-bottom: 2px solid #dadada;
+      /* padding: 0 1vw; Optional padding */
+      background-image: linear-gradient(120deg, #F9E2DF, #aad6f3);
+      backdrop-filter: blur(10px);
+    }
+
+    .nav h2 {
+
+      font-size: 2vw;
+      font-weight: 700;
+      display: flex;
+      justify-content: center;
+    }
+
+    .nav-part1 {
+      display: flex;
+      align-items: center;
+      padding: 0 3vw;
+    }
+
+    .nav-part2 {
+      display: flex;
+      /* flex-wrap: wrap; Wrap content to multiple lines */
+      gap: 4vw;
+      /* Maintain spacing between links */
+      padding: 0 3vw;
+      align-items: center;
+    }
+
+    .nav-part2 h4 {
+      font-size: 1vw;
+    }
+
+    .nav i {
+      font-size: 1.2vw;
+      display: none;
+    }
+
+    .nav-part2 h4 input {
+      width: auto;
+      padding: 0.625rem;
+      justify-content: center;
+      background-color: #292930;
+      color: #F6F6F6;
+      border: 0.125rem solid #000000;
+      border-radius: 0.3125rem;
+      font-family: 'Poppins', sans-serif;
+
+    }
+
+    .nav-part2 h4 input:hover {
+
+      background-color: #dfdfdf;
+      color: rgb(0, 0, 0);
+      transition: all .5s;
+    }
+
+    .container {
+      display: flex;
+      height: calc(100% - 65px);
+      /*  calculate the hight of .container div by subtracting the hight of nav from main div height 65+2px border=67 100%-67*/
+      width: 100%;
+      position: relative;
+      background-image: linear-gradient(120deg, #F9E2DF, #aad6f3);
+      border-bottom: 2px solid rgb(37, 27, 82);
+    }
+
+    .left-container {
+
+      height: 100%;
+      width: 50%;
+      /* background-color: red; */
+      /* padding: 10vw 4vw; */
+    }
+
+    .left-container h1 {
+      padding: 7vw 4vw;
+      line-height: 4.4vw;
+      font-size: 4vw;
+    }
+
+    .left-container h1>span {
+      color: #505CF6;
+      font-size: 3vw;
+
+    }
+
+    .left-container h1 input {
+      width: auto;
+      padding: 0.600vw 0.600vw;
+      justify-content: center;
+      background-color: #292930;
+      color: #F6F6F6;
+      border: 0.200vw solid #000000;
+      border-radius: 0.3125rem;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.2vw;
+      font-weight: 200;
+
+    }
+
+    .left-container h1 input:hover {
+
+      background-color: #dfdfdf;
+      color: rgb(0, 0, 0);
+      transition: all .5s;
+    }
+
+    .nav img {
+      /* margin-right: 3.75rem; */
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+
+    }
+
+    .right-container {
+
+      height: 100%;
+      width: 50%;
+      /* background-color: rgb(87, 84, 237); */
+
+    }
+
+    .right-container img {
+      height: 100%;
+      width: 100%;
+    }
+
+
+
+    .content {
+      display: flex;
+      width: 70%;
+      /* background-color: #505CF6; */
+      padding: 7vw 4vw;
+      justify-content: center;
+      flex-direction: column;
+      /* flex-wrap: wrap; */
+    }
+
+   
+
+    .heading h1 {
+      text-align: center;
+      /* border-bottom: 0.200vw solid #dfdfdf; */
+      /* border-l */
+
+    }
+
+    .title-1 {
+      text-decoration: underline;
+      text-underline-position: under;
+    }
+
+    .heading h1 i {
+      border-radius: 50%;
+      background-color: white;
+      color: #292930;
+      padding: 0.300vw 0.300vw;
+      font-weight: 500;
+
+    }
+
+    .card {
+      margin: 2vw 2vw;
+      display: flex;
+      /* height: calc(100% - 27vh); */
+    }
+
+    .card-1 {
+      display: flex;
+      padding: 1vw 1vw;
+      /* background-color: #505CF6; */
+      background-image: linear-gradient(180deg, #36363E, #292930);
+      width: 12vw;
+      height: 20vw;
+      box-shadow: inset;
+      border: 1px solid #424245;
+      border-radius: 1vw;
+      flex-direction: column;
+      margin: 0 3vw;
+    }
+
+    .text {
+      height: 6vw;
+      font-size: 0.600vw;
+
+
+    }
+
+    .text p {
+      color: #D0D0D0;
+      text-align: left;
+      font-size: 0.700vw;
+    }
+
+    .card-button {
+      margin: 2.5vw 0;
+      align-items: center;
+      
+
+    }
+
+    .card-button input {
+      width: 10vw;
+      padding: 0.600vw 0.600vw;
+      justify-content: center;
+      background-color: #7888ff;
+      color: #000000;
+      border: none;
+      border-radius: 0.3125rem;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.2vw;
+
+    }
+
+    .card-button input:hover {
+      background-color: transparent;
+      color: rgb(255, 255, 255);
+      transition: all .2s;
+      border: 1px solid #424245;
+    }
+
+
+
+
+
+    @media(max-width:700px) {
+      .nav {
+
+        height: 65px;
+        width: 100%;
+      }
+
+      .nav h2 {
+        font-size: 6vw;
+        padding: 0 5vw;
+      }
+
+      .nav h4 {
+        display: none;
+
+      }
+
+      .nav i {
+        display: block;
+        font-size: 6vw;
+        font-weight: 800;
+      }
+
+      .container {
+        flex-direction: column;
+        height: calc(100% - 65px);
+      }
+
+      .left-container {
+        width: 100%;
+        height: 50%;
+        /* padding: 4vw 6vw; */
+      }
+
+      .left-container h1 {
+        padding-top: 6vh;
+        font-size: 10vw;
+        line-height: 11vw;
+      }
+
+      .left-container h1 span {
+        font-size: 7vw;
+        line-height: 11vw;
+      }
+
+      .left-container h1 input {
+        padding: 3vw 6vw;
+        border-radius: 3px;
+        font-size: 3.6vw;
+        font-weight: 600;
+      }
+
+      .right-container {
+        width: 100%;
+        height: 50%;
+
+      }
+
+      .right-container img {
+
+        width: 85%;
+        height: 85%;
+
+      }
+    }
+
+
+
+
+
+
+    /* new css */
+
+    .card-articles {
+      display: flex;
+      background-color: #292930;
+    }
+
+    .container1 {
+      width: 70vw;
+      background-color: #292930;
+      color: white;
+      padding: 1vw 1vw;
+      padding-bottom: 10vw;
+      border-radius: 10px;
+
+
+    }
+
+    .container1 .heading {
+      text-align: center;
+      padding-bottom: 1.5vw;
+      text-shadow: 0 1px 4px rgb(181, 181, 181);
+      font-size: 35px;
+    }
+
+    .container1 .box-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 15px;
+    }
+
+    .box-container {
+      padding: 5vw 5vw;
+      box-shadow: inset 2px 2px 6px rgba(50, 50, 50, 10),
+        /* Inner light */
+        inset -2px -2px 6px rgba(50, 50, 50, 10);
+      border-radius: 20px;
+
+    }
+
+    .container1 .box-container .box {
+      display: flex;
+      padding: 30px 30px;
+      /* background-color: #505CF6; */
+      background-image: linear-gradient(180deg, #36363E, #292930);
+      /* width: 12vw; */
+      /* max-width:15vw; */
+      box-shadow: inset;
+      border: 1px solid #424245;
+      border-radius: 1vw;
+      flex-direction: column;
+      margin: 0 1vw;
+    }
+
+    .container1 .box-container .box:hover {
+      background-image: linear-gradient(180deg, #ffffff, #9f9f9f);
+      color: #1a1a1b;
+
+    }
+    .container1 .box-container .box:hover p{
+      color: #1a1a1b;
+      font-weight: 500;
+    }
+
+
+    .box a {
+      width: auto;
+      padding: 0.600vw 0.600vw;
+      justify-content: center;
+      background-color: #FFDC60;
+      color: #000000;
+      border: none;
+      border-radius: 0.3125rem;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.2vw;
+      text-decoration: none;
+      text-align: center;
+      font-weight: 800;
+    }
+
+    .box a:hover {
+      background-color: transparent;
+
+      transition: all .2s;
+      border: 1px solid #424245;
+      text-decoration: none;
+    }
+
+    .box img {
+      width: 80px;
+    }
+
+    .box p {
+      color: #717171;
+      line-height: 1.3;
+      margin-bottom: 1vw;
+
+    }
+
+    /* article-section */
+
+    .articles {
+      background-color: #292930;
+      padding: 1.5vw 0;
+    }
+
+    .articles h1 {
+
+      text-align: center;
+      padding-bottom: 1.5vw;
+      text-shadow: 0 1px 4px rgb(181, 181, 181);
+      font-size: 35px;
+      color: white;
+    }
+
+    .article-card {
+      padding: 1vw 1vw;
+    }
+
+    .article-card::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: #ccc;
+      margin-top: 4px;
+    }
+
+    .article-card a {
+      width: 30vw;
+      max-height: fit-content;
+      display: flex;
+      flex-direction: row;
+      justify-self: flex-end;
+      text-decoration: none;
+      color: #dfdfdf;
+    }
+
+    .article-image img {
+      border-radius: 1vw;
+      display: flex;
+      width: 7vw;
+     
+    }
+
+    .article-content {
+      padding: 1vw 1vw;
+      display: flex;
+      width: calc(100% - 10vw);
+    }
+
+
+
+    @media(max-width:700px) {
+      .box a {
+        padding: 3vw 6vw;
+        border-radius: 0.3125rem;
+        font-size: 3.6vw;
+        font-weight: 600;
+
+      }
+
+      .card-articles {
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        /* height: 100%; */
+      }
+
+
+
+
+      /* article-section */
+      .article-card {
+        padding: 1vw 5vw;
+      }
+
+      .articles {
+        width: 100%;
+
+      }
+
+      .article-card a {
+        width: 100%;
+      }
+
+      .article-image img {
+        border-radius: 1vw;
+        display: flex;
+        width: 20vw;
+      }
+    }
+  </style>
 </head>
 
 <body>
   <div class="main">
     <div class="nav">
       <div class="nav-part1">
-      <a href="" class="logo"><img src="img\logo.png" alt="seowebgrow.com"></a>
-      <h2>SEOWEBGROW</h2>
-    </div>
+        <a href="index.html" class="logo"><img src="img\SEO LOGO DESIGN.png" alt="seowebgrow.com"></a>
+        <h2>SEOWEBGROW</h2>
+      </div>
       <div class="nav-part2">
         <h4>Home</h4>
         <h4>Service</h4>
@@ -42,19 +561,145 @@
           <br>
           <input type="button" src="/" value="Explore Now">
         </h1>
-        
       </div>
       <div class="right-container">
         <img src="img\img1.png" alt="">
       </div>
     </div>
-  </div>
+    <!-- Main section End Here -->
+
+
+    <!-- Card Section -->
+    <div class="card-articles">
+      <!-- cards -->
+      <div class="container1">
+        <h1 class="heading">
+          Services
+        </h1>
+        <div class="box-container">
+          <div class="box">
+            <img src="img\card-1.png" alt="">
+            <h3>Backlink Checker</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni fugiat, omnis deserunt exercitationem
+              voluptatum modi?</p>
+            <a href="" class="btn">Click</a>
+          </div>
+          <div class="box">
+            <img src="img\card-1.png" alt="">
+            <h3>Backlink Checker</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni fugiat, omnis deserunt exercitationem
+              voluptatum modi?</p>
+            <a href="" class="btn">Click</a>
+          </div>
+          <div class="box">
+            <img src="img\card-1.png" alt="">
+            <h3>Backlink Checker</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni fugiat, omnis deserunt exercitationem
+              voluptatum modi?</p>
+            <a href="" class="btn">Click</a>
+          </div>
+          <div class="box">
+            <img src="img\card-1.png" alt="">
+            <h3>Backlink Checker</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni fugiat, omnis deserunt exercitationem
+              voluptatum modi?</p>
+            <a href="" class="btn">Click</a>
+          </div>
+          <div class="box">
+            <img src="img\card-1.png" alt="">
+            <h3>Backlink Checker</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni fugiat, omnis deserunt exercitationem
+              voluptatum modi?</p>
+            <a href="" class="btn">Click</a>
+          </div>
+          <div class="box">
+            <img src="img\card-1.png" alt="">
+            <h3>Backlink Checker</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni fugiat, omnis deserunt exercitationem
+              voluptatum modi?</p>
+            <a href="" class="btn">Click</a>
+          </div>
+        </div>
+      </div>
+      <!-- Articles -->
+      <div class="articles">
+        <h1>Recent Articles</h1>
+        <div class="article-block">
+          <div class="article-card">
+            <a href="">
+              <div class="article-image">
+                <img src="img\art-1.jpeg" alt="">
+              </div>
+              <div class="article-content">
+                <h3>Lorem ipsum dolor sit. Lorem ipsum dolor sit amet.</h3>
+              </div>
+            </a>
+          </div>
+          <div class="article-card">
+            <a href="">
+              <div class="article-image">
+                <img src="img\art-2.jpeg" alt="">
+              </div>
+              <div class="article-content">
+                <h3>Lorem ipsum dolor sit. Lorem ipsum dolor sit amet.</h3>
+              </div>
+            </a>
+          </div>
+          <div class="article-card">
+            <a href="">
+              <div class="article-image">
+                <img src="img\art-3.jpeg" alt="">
+              </div>
+              <div class="article-content">
+                <h3>Lorem ipsum dolor sit. Lorem ipsum dolor sit amet.</h3>
+              </div>
+            </a>
+          </div>
+          <div class="article-card">
+            <a href="">
+              <div class="article-image">
+                <img src="img\art-4.jpeg" alt="">
+              </div>
+              <div class="article-content">
+                <h3>Lorem ipsum dolor sit. Lorem ipsum dolor sit amet.</h3>
+              </div>
+            </a>
+          </div>
+          <div class="article-card">
+            <a href="">
+              <div class="article-image">
+                <img src="img\art-5.jpeg" alt="">
+              </div>
+              <div class="article-content">
+                <h3>Lorem ipsum dolor sit. Lorem ipsum dolor sit amet.</h3>
+              </div>
+            </a>
+          </div>
+          <div class="article-card">
+            <a href="">
+              <div class="article-image">
+                <img src="img\art-6.jpeg" alt="">
+              </div>
+              <div class="article-content">
+                <h3>Lorem ipsum dolor sit. Lorem ipsum dolor sit amet.</h3>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+
+
+
 </body>
 
 <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 <script>
   var typed = new Typed('#element', {
-    strings: ['SSL Checker', 'Hosting Checker', 'AdSense Calculator', 'Backlinks Checker'],
+    strings: ['SSL Checker', 'Hosting Checker', 'AdSense Calculator', 'Backlinks Checker', 'Website Worth Calculater'],
     typeSpeed: 40,
   });
 </script>
