@@ -463,6 +463,9 @@
       background-color: #ccc;
       margin-top: 4px;
     }
+    .article-card:hover h3{
+      color: #a7adfd;
+    }
 
     .article-card a {
       width: 30vw;
@@ -480,13 +483,20 @@
       width: 7vw;
      
     }
+   .article-card a:hover img{
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+}
 
     .article-content {
       padding: 1vw 1vw;
       display: flex;
       width: calc(100% - 10vw);
     }
-
+    .article-card h3 {
+       
+        font-size: 2.3vh;
+      }
 
 
     @media(max-width:700px) {
@@ -523,11 +533,24 @@
 
       .articles {
         width: 100%;
+        background-color: #F5F5F5;
 
       }
+      .articles h1{
+        
+        color: #000000;
 
+      }
+      .article-card::after{
+        background-color: #211f1f;
+      }
       .article-card a {
         width: 100%;
+      }
+
+      .article-card h3 {
+        color: #1a1a1b;
+        font-size: 2.2vh;
       }
 
       .article-image img {
